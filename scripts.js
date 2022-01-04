@@ -5,6 +5,7 @@ function drawGrid(gridSize) {
         let square = document.createElement("div");
         grid.appendChild(square).className = "grid-square";
     }
+
 }
 
 function changeValue(e) {
@@ -24,7 +25,14 @@ function redraw() {
 function changeGridSize(e) {
     let value = e.target.value;
     setGridSize(value);
-    // changeValue(e);
+    redraw();
+}
+
+function changeColour(e) {
+    e.target.style.backgroundColor = "#FF44F2";
+}
+
+function clearGrid() {
     redraw();
 }
 
@@ -38,3 +46,6 @@ let gridSizeSlider = document.querySelector(".slider");
 gridSizeSlider.addEventListener("mousemove", changeValue);
 gridSizeSlider.addEventListener("change", changeGridSize);
 let currentSize = DEFAULT_GRID_SIZE;
+grid.addEventListener("mouseover", changeColour);
+let clearButton = document.querySelector("#clear")
+clearButton.addEventListener("click", clearGrid);
