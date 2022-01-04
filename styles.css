@@ -1,3 +1,13 @@
+:root {
+    --grid-rows: 1;
+    --grid-cols: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 header .title {
     text-align: center;
 }
@@ -7,7 +17,8 @@ header .title {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    gap: 50px;
+    gap: 25px;
+    padding: 2rem;
     /*border: 3px solid red;*/
 }
 
@@ -20,4 +31,21 @@ button {
 button:active {
     background-color: #333;
     color: #FBFBFB;
+}
+
+
+.container .grid {
+    width: 700px;
+    height: 700px;
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.grid-square {
+    border: 1px solid #333;
 }
