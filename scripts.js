@@ -37,15 +37,23 @@ function clearGrid() {
 }
 
 
-
+//default grid 16 x 16
 const DEFAULT_GRID_SIZE = 16;
 let grid = document.querySelector(".grid");
 drawGrid(DEFAULT_GRID_SIZE);
+
+//slider
 let gridSizeValue = document.querySelector(".slider-value");
 let gridSizeSlider = document.querySelector(".slider");
 gridSizeSlider.addEventListener("mousemove", changeValue);
 gridSizeSlider.addEventListener("change", changeGridSize);
+
 let currentSize = DEFAULT_GRID_SIZE;
+
+//hover in grid
 grid.addEventListener("mouseover", changeColour);
-let clearButton = document.querySelector("#clear")
+
+//settings buttons
+let clearButton = document.querySelector("#clear");
 clearButton.addEventListener("click", clearGrid);
+
